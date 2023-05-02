@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>toot-embed demo</title>
+    <script defer src="/src/toot-embed-element.js"></script>
+    <style>
+      body {
+        font-family: system-ui;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Here's a example toot:</p>
+    <toot-embed src="https://fosstodon.org/api/v1/statuses/109660552894549193">
+      <!--- TODO: this should render skeleton ui/or spinners -->
+      <!--- TODO: **blurhash** -->
+    </toot-embed>
+    <toot-embed
+      src="https://fosstodon.org/api/v1/statuses/109660552894549193"
+      nofetch
+    >
+      <!-- TODO: slotted element styling and markup -->
+      <img
+        slot="avatar"
+        src="https://cdn.fosstodon.org/accounts/avatars/109/658/969/750/741/594/original/e4951b23abb4c856.png"
+      />
+      <span slot="author-name">Web Components Guide Bot</span>
+      <span slot="author-handle">@webcomponentsguide@fosstodon.org</span>
+      <div slot="content">
+        <p>
+          Hello, world! Announcing the launch of a new way to learn how to
+          create Web Components.
+        </p>
+        <p>
+          <a
+            href="https://fosstodon.org/tags/WebComponents"
+            class="mention hashtag"
+            rel="tag"
+            >#<span>WebComponents</span></a
+          >
+        </p>
+        <p>
+          <a
+            href="https://webcomponents.guide/blog/introducing-webcomponents-guide/"
+            target="_blank"
+            rel="nofollow noopener noreferrer"
+            ><span class="invisible">https://</span
+            ><span class="ellipsis">webcomponents.guide/blog/intro</span
+            ><span class="invisible">ducing-webcomponents-guide/</span></a
+          >
+        </p>
+      </div>
+      <span slot="date">January 9, 2023 at 6:00 PM</span>
+    </toot-embed>
+  </body>
+</html>
